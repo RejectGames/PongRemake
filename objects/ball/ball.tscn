@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxjx6klk75oim"]
+
+[ext_resource type="Script" path="res://objects/ball/ball.gd" id="1_1o1qp"]
+
+[sub_resource type="Gradient" id="Gradient_ilaqm"]
+colors = PackedColorArray(0.925353, 0.925353, 0.925353, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ghwbi"]
+gradient = SubResource("Gradient_ilaqm")
+width = 16
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyjfh"]
+
+[node name="Ball" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_1o1qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ghwbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dyjfh")

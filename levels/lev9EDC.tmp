@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://df5ocdcofci2l"]
+
+[ext_resource type="PackedScene" uid="uid://btv8o6dofmg56" path="res://objects/player/paddle.tscn" id="1_d82vi"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_d82vi")]
+position = Vector2(120, 360)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 360.0
+offset_right = 40.0
+offset_bottom = 400.0

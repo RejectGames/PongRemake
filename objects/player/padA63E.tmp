@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://btv8o6dofmg56"]
+
+[ext_resource type="Script" path="res://objects/player/paddle.gd" id="1_hdnwf"]
+[ext_resource type="Script" path="res://objects/player/paddle_sprite.gd" id="1_js8mu"]
+[ext_resource type="Resource" uid="uid://c7r3qceljkgsy" path="res://objects/player/paddle_data.tres" id="2_hg4if"]
+[ext_resource type="Script" path="res://objects/player/dynamic_collision.gd" id="3_acolq"]
+[ext_resource type="Script" path="res://objects/player/input_handler.gd" id="5_rbbem"]
+[ext_resource type="Resource" uid="uid://du8n8bm6i8yyo" path="res://objects/player/input_actions.tres" id="6_n80sk"]
+
+[node name="Paddle" type="CharacterBody2D" node_paths=PackedStringArray("input_handler")]
+position = Vector2(-0.0287781, 0)
+script = ExtResource("1_hdnwf")
+data = ExtResource("2_hg4if")
+input_handler = NodePath("InputHandler")
+
+[node name="DynamicCollision" type="CollisionShape2D" parent="." node_paths=PackedStringArray("paddle")]
+script = ExtResource("3_acolq")
+paddle = NodePath("..")
+
+[node name="PaddleSprite" type="Sprite2D" parent="." node_paths=PackedStringArray("paddle")]
+position = Vector2(-0.29541, 0.192841)
+offset = Vector2(-12.6129, -75.3978)
+script = ExtResource("1_js8mu")
+paddle = NodePath("..")
+
+[node name="InputHandler" type="Node" parent="."]
+script = ExtResource("5_rbbem")
+input_actions = ExtResource("6_n80sk")
